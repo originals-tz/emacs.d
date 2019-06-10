@@ -3,3 +3,4 @@
 (package-initialize)
 (require 'init-melpa)
 (require 'init-usepackage)
+(require 'init-vim)
