@@ -20,7 +20,7 @@
 ;;-----
 (use-package flycheck
   :ensure t
-  :init (global-flycheck-mode))
+  :config (add-hook 'c++-mode-hook 'flycheck-mode))
 
 ;;-----
 ;; indent

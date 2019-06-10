@@ -6,4 +6,7 @@
 (require 'init-vim)
 (require 'init-cpp)
 (require 'init-uility)
+(require 'init-code)
+(require 'init-refactor-tool)
 (require 'init-user)
+(put 'narrow-to-region 'disabled nil)

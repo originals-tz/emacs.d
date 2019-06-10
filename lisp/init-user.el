@@ -17,11 +17,9 @@
 
 (setq backup-directory-alist (quote (("." . "~/.emacs-backups"))))
 
+;; set scroll-mode
 (setq scroll-step            1
       scroll-conservatively  10000)
-;; comment
-(global-set-key (kbd "C-c ,") 'comment-region)
-(global-set-key (kbd "C-c p") 'uncomment-region)
 
 ;; search file
 (define-key evil-normal-state-map "P" 'helm-projectile) ; shift-p, just like ctrp-p,
@@ -30,8 +28,5 @@
 (define-key evil-normal-state-map "n" 'smex)            ; use the easy command mode
 (define-key evil-normal-state-map "N" 'smex-major-mode-commands)
 
-;; show all and hide all
-(define-key evil-normal-state-map "zO" 'hs-show-all)
-(define-key evil-normal-state-map "zC" 'hs-hide-all)
 
 (provide 'init-user)
