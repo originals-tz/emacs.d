@@ -5,4 +5,5 @@
 (require 'init-usepackage)
 (require 'init-vim)
 (require 'init-cpp)
+(require 'init-uility)
 (require 'init-user)
