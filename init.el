@@ -4,3 +4,5 @@
 (require 'init-melpa)
 (require 'init-usepackage)
 (require 'init-vim)
+(require 'init-cpp)
+(require 'init-user)
