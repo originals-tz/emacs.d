@@ -1,4 +1,6 @@
+;;-----
 ;; irony
+;;-----
 (use-package irony
   :ensure t)
 (add-hook 'c++-mode-hook 'irony-mode)
@@ -6,17 +8,23 @@
 (add-hook 'objc-mode-hook 'irony-mode)
 (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
 
+;;-----
 ;; company
+;;-----
 (use-package company
 	:ensure t
 	:init (global-company-mode))
 
+;;-----
 ;; flycheck
+;;-----
 (use-package flycheck
   :ensure t
   :init (global-flycheck-mode))
 
+;;-----
 ;; indent
+;;-----
 (defun irony--indent-or-complete ()
   "Indent or Complete"
   (interactive)
@@ -36,7 +44,9 @@
         (backward-char 1)
         (if (looking-at "->") t nil)))))
 
+;;-----
 ;;CMake
+;;-----
 (use-package cmake-ide
   :ensure t
   :defer t
@@ -55,7 +65,27 @@
 (require 'rtags)
 (cmake-ide-setup)
 
+;;-----
+;; enables the completion of C/C++ header file
+;;-----
+(require 'company-irony-c-headers)
+;; Load with `irony-mode` as a grouped backend
+(eval-after-load 'company
+  '(add-to-list
+    'company-backends '(company-irony-c-headers company-irony)))
+;;; backends for irony-c-header
+(use-package company-irony-c-headers
+  :ensure t
+  :defer t
+  :init (progn (add-hook 'c-mode-hook
+       (lambda () (add-to-list 'company-backends 'company-irony-c-headers)))
+         (add-hook 'c++-mode-hook
+       (lambda () (add-to-list 'company-backends 'company-irony-c-headers)))
+         ))
+
+;;-----
 ;;C++
+;;-----
 (add-hook 'c++-mode-hook (lambda ()
 			   (setq flycheck-clang-language-standard "c++11")
 			   (setq irony-additional-clang-options '("-std=c++11"))))
