@@ -60,4 +60,15 @@
 			   (setq flycheck-clang-language-standard "c++11")
 			   (setq irony-additional-clang-options '("-std=c++11"))))
 
+(setq-default indent-tabs-mode nil) ;;use 4-space replace tab
+(setq c-default-style "linux"
+      c-basic-offset 4)
+
+;; set the switch-case offset style
+(add-hook 'c-mode-common-hook
+          (lambda ()
+            (c-set-offset 'case-label '+)))
+
+(add-hook 'c++-mode-hook 'hs-minor-mode)
+
 (provide 'init-cpp)
