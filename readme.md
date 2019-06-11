@@ -23,7 +23,7 @@ My emacs configuration. This configuration includes:
 
 ### How to structure your emacs configuration？
 
- The simple example is:
+ A simple example is:
 
 ```
 ~/.emacs

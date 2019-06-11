@@ -1,7 +1,6 @@
-
-elpa
-custom.el
+*
+!lisp/*
+!readme.md
+!init.el
 *~
-irony
 *.DS_Store
-smex-items
