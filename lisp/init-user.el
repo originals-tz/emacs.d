@@ -3,6 +3,8 @@
   :ensure t
   :config (load-theme 'monokai t))
 
+;; disable menu bar
+(menu-bar-mode -1)
 
 ;; shared the clipboard, only for OS X
 (defun copy-from-osx ()
