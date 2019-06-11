@@ -1,6 +1,8 @@
-*
-!lisp/*
-!readme.md
-!init.el
+custom.el
+elpa/*
+irony/*
+projectile-bookmarks.eld
+recentf
+smex-items
 *~
 *.DS_Store
