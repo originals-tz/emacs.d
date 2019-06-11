@@ -9,5 +9,6 @@
 (require 'init-code)
 (require 'init-refactor-tool)
 (require 'init-orgmode)
+(require 'init-git)
 (require 'init-user)
 (put 'narrow-to-region 'disabled nil)
