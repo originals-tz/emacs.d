@@ -55,4 +55,16 @@ Such as
 
 (provide 'init-melpa) ;; missing this statement, you will get a error, because you require this model in init.el
 ```
+### Something about emacs
 
+if you get a error from eamcs, you can see the message from Message buffer
+
+### For MacOS User
+
+1. if you get a error when open the cpp file , such as 'wchar.h not found', you can try to install **SDK header**
+
+```
+open /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg
+```
+
+2. you can download the latest version of iterm2, it provides a Minimal theme for title bar, it is very nice
