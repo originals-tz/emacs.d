@@ -1,4 +1,5 @@
 custom.el
+transient/*
 elpa/*
 irony/*
 projectile-bookmarks.eld
@@ -6,3 +7,4 @@ recentf
 smex-items
 *~
 *.DS_Store
+
