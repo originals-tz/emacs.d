@@ -3,6 +3,8 @@
   :ensure t
   :config (load-theme 'monokai t))
 
+(add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
+
 ;; disable menu bar
 (menu-bar-mode -1)
 

@@ -1,3 +1,6 @@
+
+(toggle-truncate-lines 1)
+
 ;;brackets completion
 (electric-pair-mode t)
 
