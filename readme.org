@@ -29,7 +29,7 @@ This is my emacs configuration. This configuration inlcudes
 
 *** For MacOS User
 
-1. if you get a error when open the cpp file , such as 'wchar.h not found', you can try to install **SDK header**
+1. if you get a error when open the cpp file , such as *wchar.h not found*, you can try to install *SDK header*
 
    #+BEGIN_SRC 
    open /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg
@@ -53,9 +53,9 @@ if you get a error from eamcs, you can see the message from Message buffer
        |__init-mepla.el
  #+END_SRC
  
- When the emacs startups, it will load the `init.el`
+ When the emacs startups, it will load the =init.el=
 
- So, you can splite your configuration into many `.el` fils, and load them into emacs from the init.el
+ So, you can splite your configuration into many =.el= fils, and load them into emacs from the =init.el=
 
  Such as
 
