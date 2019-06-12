@@ -8,3 +8,6 @@ smex-items
 *~
 *.DS_Store
 
+*#*#
+bookmarks
+org_files/*

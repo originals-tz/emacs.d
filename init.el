@@ -10,5 +10,6 @@
 (require 'init-refactor-tool)
 (require 'init-git)
 (require 'init-modeline)
+(require 'init-org)
 (require 'init-user)
 (put 'narrow-to-region 'disabled nil)
