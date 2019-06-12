@@ -3,9 +3,9 @@
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 
 (setq org-todo-keywords
-      '((sequence "TODO" "HAND" "|" "DONE")))
+      '((sequence "TODO" "HANDLE" "|" "DONE")))
 (setf org-todo-keyword-faces '(("TODO" . (:foreground "red" :weight bold))
-                                ("HAND" . (:foreground "green" :weight bold))
+                                ("HANDLE" . (:foreground "green" :weight bold))
                                 ("DONE" . (:foreground "blue" :weight bold))))
 
 (global-set-key (kbd "C-c c") 'org-capture)
