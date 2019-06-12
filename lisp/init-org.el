@@ -20,12 +20,13 @@
 
 ;; configure org-capture templates
 ;; Template : Project
+(setq org-capture-templates '()) ;; define a empty list
 (if (file-exists-p project-tasks)
     (add-to-list 'org-capture-templates
-          '(("t"
+          '("t"
              "Project Task"
              entry
              (file+headline project-tasks "Project Tasks")
-             "* TODO %^{Task Detail}\n- Project :%^{Project Name}\n")))
+             "* TODO %^{Task}\n- Project : %^{Project Name}\n- Description : %^{Task Description}\n"))
 )
 (provide 'init-org)
