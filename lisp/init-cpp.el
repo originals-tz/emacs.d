@@ -86,6 +86,22 @@
 ;;-----
 ;;C++
 ;;-----
+(defun cpp-run ()
+  (interactive)
+  ;; get the result of compilation
+  (setq-local result (shell-command
+   (concat "g++ -std=c++11 "
+           (file-name-nondirectory buffer-file-name))))
+  ;; if compile successfully, run the program
+  (if (eq result 0)
+      (shell-command "./a.out")
+  )
+  )
+(add-hook 'c++-mode-hook
+      (lambda ()
+        (local-set-key (kbd "C-c r") 'cpp-run)))
+
+
 (add-hook 'c++-mode-hook (lambda ()
 			   (setq flycheck-clang-language-standard "c++11")
 			   (setq irony-additional-clang-options '("-std=c++11"))))
