@@ -2,14 +2,14 @@
 ;; PDF
 ;; HTML
 (fset 'export-org-to-pdf
-   "\C-c\C-elo")
+   "\C-x\C-s\C-c\C-elo")
 
 (add-hook 'org-mode-hook
       (lambda ()
         (local-set-key (kbd "C-c p RET") 'export-org-to-pdf)))
 
 (fset 'export-org-to-HTML
-   "\C-c\C-eho")
+   "\C-x\C-s\C-c\C-eho")
 
 (add-hook 'org-mode-hook
       (lambda ()

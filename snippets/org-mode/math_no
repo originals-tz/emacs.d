@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: math_no 
+# key: math_no 
+# --
+\begin{eqnarray*}
+$1
+\end{eqnarray*}
+$2
