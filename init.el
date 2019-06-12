@@ -11,6 +11,7 @@
 (require 'init-git)
 (require 'init-modeline)
 (require 'init-org)
+(require 'init-snippet)
 (require 'init-marco)
 (require 'init-user)
 (put 'narrow-to-region 'disabled nil)

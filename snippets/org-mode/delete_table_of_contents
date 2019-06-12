@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: delete_table_of_contents
+# key: dtb
+# --
+#+OPTIONS: toc:nil
