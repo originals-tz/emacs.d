@@ -5,6 +5,7 @@
 (require 'init-usepackage)
 (require 'init-vim)
 (require 'init-cpp)
+(require 'init-elisp)
 (require 'init-uility)
 (require 'init-code)
 (require 'init-refactor-tool)
