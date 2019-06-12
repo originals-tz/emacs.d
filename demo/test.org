@@ -1,0 +1,48 @@
+#+OPTIONS: toc:nil
+#+AUTHOR: OriginalS
+
+* Test
+** show the table
+
+#+BEGIN_CENTER
+Hello, World
+#+END_CENTER
+
+| a | b | c | d |
+|---+---+---+---|
+| 1 | 2 | 3 | 4 |
+| 3 | 4 | 4 | 7 |
+
+** show the code
+
+#+BEGIN_SRC C++
+#incldue <iostream>
+int main()
+{
+    std::cout << "hello,world" << std::endl;
+    return 0;
+}
+#+END_SRC
+
+** show the math expression
+\begin{equation}
+f: X \to Y \\
+y = f(x) \\
+R_f = f(X) = \{f(x) | x \in X\}
+\end{equation}
+
+** show the image
+
+file:118.jpg
+
+
+
+
+
+
+
+
+
+
+
+
