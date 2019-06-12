@@ -17,9 +17,32 @@ This is my emacs configuration. This configuration inlcudes
   - narrow-mode
   - projectile
   - ivy (you should install rg from apt/brew or other system package manager)
+- Org Plugin
+  - htmlize 
+  - org-bullets
 - Uility Tool
   - helm
   - smex
+  - magit
+- mode-line
+  - smart-mode-line
+
+*** For MacOS User
+
+1. if you get a error when open the cpp file , such as 'wchar.h not found', you can try to install **SDK header**
+
+   #+BEGIN_SRC 
+   open /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg
+   #+END_SRC
+   
+2. you can download the latest version of iterm2, it provides a Minimal theme for title bar, it is very nice
+
+
+*** tips 
+
+if you get a error from eamcs, you can see the message from Message buffer
+
+
 
 ** How to structure your emacs configuration？
 
@@ -56,18 +79,19 @@ This is my emacs configuration. This configuration inlcudes
  (provide 'init-melpa) ;; missing this statement, you will get a error, because you require this model in init.el
  #+END_SRC
 
+** marco and snippet
+*** marco
+| name               | mode | hotkey    |
+|--------------------+------+-----------|
+| export-org-to-pdf  | org  | C-c p RET |
+| export-org-to-HTML | org  | C-c h RET |
 
-** For MacOS User
-
-1. if you get a error when open the cpp file , such as 'wchar.h not found', you can try to install **SDK header**
-
-   #+BEGIN_SRC 
-   open /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg
-   #+END_SRC
-   
-2. you can download the latest version of iterm2, it provides a Minimal theme for title bar, it is very nice
+*** snippet
+| name                     | mode | key  |
+|--------------------------+------+------|
+| delete_table_of_contents | org  | dtb  |
+| math                     | org  | math |
+| src                      | org  | srg  |
 
 
-** tips 
 
-if you get a error from eamcs, you can see the message from Message buffer
