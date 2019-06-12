@@ -2,6 +2,12 @@
 (require 'org-bullets)
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 
+;; define some keybinding
+(add-hook 'org-mode-hook
+      (lambda ()
+        (local-set-key (kbd "C-c a") 'org-show-subtree)))
+;; end
+
 (setq org-todo-keywords
       '((sequence "TODO" "HANDLE" "|" "DONE")))
 (setf org-todo-keyword-faces '(("TODO" . (:foreground "red" :weight bold))
