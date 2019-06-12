@@ -7,7 +7,7 @@ recentf
 smex-items
 *~
 *.DS_Store
-
+*.html
 *#*#
 bookmarks
 org_files/*

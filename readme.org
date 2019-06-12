@@ -91,7 +91,7 @@ if you get a error from eamcs, you can see the message from Message buffer
 |--------------------------+------+------|
 | delete_table_of_contents | org  | dtb  |
 | math                     | org  | math |
-| src                      | org  | srg  |
+| src                      | org  | src  |
 
 
 
