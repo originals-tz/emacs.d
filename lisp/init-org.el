@@ -9,6 +9,8 @@
       (lambda ()
         (local-set-key (kbd "C-c a") 'org-show-subtree)))
 (global-set-key (kbd "C-c c") 'org-capture)
+(global-set-key (kbd "C-c a") 'org-agenda)
+
 
 ;; label
 (setq org-todo-keywords
@@ -18,15 +20,26 @@
                                 ("HANDLE" . (:foreground "green" :weight bold))
                                 ("DONE" . (:foreground "blue" :weight bold))))
 
-;; set default-path for capture
-(setq org-default-notes-file (concat user-emacs-directory "task_list.org"))
+;; task-path 
+(setq org-default-notes-file (concat user-emacs-directory "tasks/normal_tasks.org"))
+(setq project-tasks (concat user-emacs-directory "tasks/project_tasks.org"))
+(setq exercise-tasks (concat user-emacs-directory "tasks/exercise_tasks.org"))
 
-;; my-project-task-path 
-(setq project-tasks (concat user-emacs-directory "org_files/project_tasks.org"))
+(setq org-agenda-files (list "~/.emacs.d/tasks/normal_tasks.org"
+                             "~/.emacs.d/tasks/project_tasks.org"
+                           ))
+
+(defun my-normal-tasks()
+  (interactive)
+  (find-file org-default-notes-file))
 
 (defun my-project-tasks ()
   (interactive)
   (find-file project-tasks))
+
+(defun my-exercise-tasks ()
+  (interactive)
+  (find-file exercise-tasks))
 
 ;; configure org-capture templates
 ;; Template : Project

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: btag
+# key: btag
+# --
+["$1"]$2

@@ -15,6 +15,7 @@
 (require 'init-uility)
 (require 'init-refactor-tool)
 (require 'init-git)
+(require 'init-hugo)
 ;; user
 (require 'init-modeline)
 (require 'init-snippet)
