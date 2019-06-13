@@ -90,7 +90,7 @@
   (interactive)
   ;; get the result of compilation
   (setq-local result (shell-command
-   (concat "g++ -std=c++11 "
+   (concat "g++ -std=c++11 -g"
            (file-name-nondirectory buffer-file-name))))
   ;; if compile successfully, run the program
   (if (eq result 0)

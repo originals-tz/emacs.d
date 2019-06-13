@@ -31,6 +31,16 @@
 ;; configure org-capture templates
 ;; Template : Project
 (setq org-capture-templates '()) ;; define a empty list
+
+(if (file-exists-p project-tasks)
+    (add-to-list 'org-capture-templates
+          '("n"
+             "Normal Task"
+             entry
+             (file+headline org-default-notes-file "Normal Task")
+             "* TODO %^{Task}\n"))
+)
+
 (if (file-exists-p project-tasks)
     (add-to-list 'org-capture-templates
           '("t"
