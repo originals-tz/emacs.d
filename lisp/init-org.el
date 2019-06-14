@@ -28,18 +28,36 @@
 (setq org-agenda-files (list "~/.emacs.d/tasks/normal_tasks.org"
                              "~/.emacs.d/tasks/project_tasks.org"
                            ))
-
+;; Normal tasks
 (defun my-normal-tasks()
   (interactive)
   (find-file org-default-notes-file))
 
+(defun show-normal-tasks()
+  (interactive)
+  (find-file-noselect org-default-notes-file)
+  (display-buffer "normal_tasks.org"))
+
+;; Project tasks
 (defun my-project-tasks ()
   (interactive)
   (find-file project-tasks))
 
+(defun show-project-tasks()
+  (interactive)
+  (find-file-noselect org-default-notes-file)
+  (display-buffer "project_tasks.org"))
+
+;; exercise tasks
 (defun my-exercise-tasks ()
   (interactive)
   (find-file exercise-tasks))
+
+(defun show-project-tasks()
+  (interactive)
+  (find-file-noselect org-default-notes-file)
+  (display-buffer "exercise_tasks.org"))
+;; end
 
 ;; configure org-capture templates
 ;; Template : Project
@@ -62,4 +80,7 @@
              (file+headline project-tasks "Project Tasks")
              "* TODO %^{Task}\n- Project : %^{Project Name}\n- Description : %^{Task Description}\n"))
 )
+
+(setq org-startup-folded nil)
+
 (provide 'init-org)
