@@ -68,7 +68,8 @@
 ;;-----
 ;; enables the completion of C/C++ header file
 ;;-----
-(require 'company-irony-c-headers)
+(use-package company-irony-c-headers
+  :ensure t)
 ;; Load with `irony-mode` as a grouped backend
 (eval-after-load 'company
   '(add-to-list
