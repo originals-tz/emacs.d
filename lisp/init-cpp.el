@@ -62,7 +62,8 @@
 	 ("\\.cmake\\'" . cmake-mode)
 	 )
 )
-(require 'rtags)
+(use-package rtags
+  :ensure t)
 (cmake-ide-setup)
 
 ;;-----
