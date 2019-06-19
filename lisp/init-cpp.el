@@ -66,15 +66,10 @@
   :ensure t)
 (cmake-ide-setup)
 
+;;(setq rtags-verify-protocol-version nil)
 ;;-----
 ;; enables the completion of C/C++ header file
 ;;-----
-(use-package company-irony-c-headers
-  :ensure t)
-;; Load with `irony-mode` as a grouped backend
-(eval-after-load 'company
-  '(add-to-list
-    'company-backends '(company-irony-c-headers company-irony)))
 ;;; backends for irony-c-header
 (use-package company-irony-c-headers
   :ensure t
@@ -85,6 +80,10 @@
        (lambda () (add-to-list 'company-backends 'company-irony-c-headers)))
          ))
 
+;; Load with `irony-mode` as a grouped backend
+(eval-after-load 'company
+  '(add-to-list
+    'company-backends '(company-irony-c-headers company-irony)))
 ;;-----
 ;;C++
 ;;-----
@@ -92,7 +91,7 @@
   (interactive)
   ;; get the result of compilation
   (setq-local result (shell-command
-   (concat "g++ -std=c++11 -g"
+   (concat "g++ -std=c++11 -g "
            (file-name-nondirectory buffer-file-name))))
   ;; if compile successfully, run the program
   (if (eq result 0)
@@ -105,8 +104,8 @@
 
 
 (add-hook 'c++-mode-hook (lambda ()
-			   (setq flycheck-clang-language-standard "c++11")
-			   (setq irony-additional-clang-options '("-std=c++11"))))
+			   (setq flycheck-clang-language-standard "c++17")
+			   (setq irony-additional-clang-options '("-std=c++17"))))
 
 (setq-default indent-tabs-mode nil) ;;use 4-space replace tab
 (setq c-default-style "linux"
