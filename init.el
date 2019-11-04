@@ -13,9 +13,9 @@
 (require 'init-org)
 ;; tool
 (require 'init-uility)
-(require 'init-refactor-tool)
-(require 'init-git)
-(require 'init-hugo)
+;;(require 'init-refactor-tool)
+;;(require 'init-git)
+;;(require 'init-hugo)
 ;; user
 (require 'init-modeline)
 (require 'init-snippet)
