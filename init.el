@@ -6,19 +6,18 @@
 (require 'init-usepackage)
 ;; vim
 (require 'init-vim)
-;; code
 (require 'init-cpp)
-(require 'init-elisp)
 (require 'init-code)
-(require 'init-org)
+;; code
+;;(require 'init-org)
 ;; tool
 (require 'init-uility)
-(require 'init-refactor-tool)
-(require 'init-git)
-(require 'init-hugo)
+(require 'grep-dired)
 ;; user
 (require 'init-modeline)
-(require 'init-snippet)
+;;(require 'init-snippet)
 (require 'init-marco)
 (require 'init-user)
 (put 'narrow-to-region 'disabled nil)
+(global-linum-mode)
+(setq linum-format "%4d ")

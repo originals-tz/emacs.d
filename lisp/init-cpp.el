@@ -41,27 +41,8 @@
         (backward-char 1)
         (if (looking-at "->") t nil)))))
 
-;;-----
-;;CMake
-;;-----
-(use-package cmake-ide
-  :ensure t
-  :defer t
-  :init (progn
-	  (add-hook 'c++-mode-hook (lambda () (cmake-ide-setup)))
-	  (add-hook 'c-mode-hook (lambda () (cmake-ide-setup)))
-	  )
-)
-(use-package cmake-mode
-  :ensure t
-  :mode (
-	 ("CMakeLists\\.txt\\'" . cmake-mode)
-	 ("\\.cmake\\'" . cmake-mode)
-	 )
-)
 (use-package rtags
   :ensure t)
-(cmake-ide-setup)
 
 ;;(setq rtags-verify-protocol-version nil)
 ;;-----
@@ -112,6 +93,9 @@
 (add-hook 'c-mode-common-hook
           (lambda ()
             (c-set-offset 'case-label '+)))
+
+(global-set-key "\C-m" 'newline-and-indent)
+(global-set-key (kbd "C-<return>") 'newline)
 
 (add-hook 'c++-mode-hook 'hs-minor-mode)
 
