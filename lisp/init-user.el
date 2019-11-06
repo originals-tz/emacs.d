@@ -13,7 +13,7 @@
       scroll-conservatively  10000)
 
 ;; search file
-(define-key evil-normal-state-map "P" 'helm-projectile) ; shift-p, just like ctrp-p,
+(define-key evil-normal-state-map "P" 'grep-dired-dwim) ; shift-p, just like ctrp-p,
 
 ;; search command
 (define-key evil-normal-state-map "n" 'smex)            ; use the easy command mode
