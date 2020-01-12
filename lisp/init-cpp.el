@@ -101,8 +101,8 @@
 
 
 (add-hook 'c++-mode-hook (lambda ()
-			   (setq flycheck-clang-language-standard "c++11")
-			   (setq irony-additional-clang-options '("-std=c++11"))))
+			   (setq flycheck-clang-language-standard "c++17")
+			   (setq irony-additional-clang-options '("-std=c++17"))))
 
 (setq-default indent-tabs-mode nil) ;;use 4-space replace tab
 (setq c-default-style "linux"

@@ -8,19 +8,6 @@
 ;; disable menu bar
 (menu-bar-mode -1)
 
-;; shared the clipboard, only for OS X
-(defun copy-from-osx ()
-	(shell-command-to-string "pbpaste"))
-
-(defun paste-to-osx (text &optional push)
-	(let ((process-connection-type nil))
-		(let ((proc (start-process"pbcopy" "*Messages*" "pbcopy")))
-			(process-send-string proc text)
-			(process-send-eof proc))))
-(setq interprogram-cut-function 'paste-to-osx)
-
-(setq backup-directory-alist (quote (("." . "~/.emacs-backups"))))
-
 ;; set scroll-mode
 (setq scroll-step            1
       scroll-conservatively  10000)
