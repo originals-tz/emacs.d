@@ -111,8 +111,12 @@
 ;; set the switch-case offset style
 (add-hook 'c-mode-common-hook
           (lambda ()
-            (c-set-offset 'case-label '+)))
+            (setq c-basic-offset 4)
+            (c-set-offset 'case-label '+)
+            (c-set-offset 'inline-open '0)))
 
 (add-hook 'c++-mode-hook 'hs-minor-mode)
+
+(add-to-list 'auto-mode-alist '("\\.hpp\\'" . c++-mode))
 
 (provide 'init-cpp)
