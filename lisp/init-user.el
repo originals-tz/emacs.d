@@ -1,7 +1,7 @@
 ;; [Theme]
-(use-package monokai-theme
-  :ensure t
-  :config (load-theme 'monokai t))
+;;(use-package monokai-theme
+;;  :ensure t
+;;  :config (load-theme 'monokai t))
 
 (add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
 
@@ -19,5 +19,9 @@
 (define-key evil-normal-state-map "n" 'smex)            ; use the easy command mode
 (define-key evil-normal-state-map "N" 'smex-major-mode-commands)
 
+(add-to-list 'load-path "~/.emacs.d/plugin/color-theme")
+(require 'color-theme)
+(color-theme-initialize)
+(color-theme-billw)
 
 (provide 'init-user)

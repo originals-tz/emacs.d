@@ -11,6 +11,7 @@
 (require 'init-elisp)
 (require 'init-code)
 (require 'init-org)
+(require 'doxygen)
 ;; tool
 (require 'init-uility)
 ;;(require 'init-refactor-tool)
