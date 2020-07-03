@@ -1,4 +1,16 @@
 ;;-----
+;; TAGS
+;;-----
+(use-package ctags-update
+  :ensure t)
+(add-hook 'c-mode-hook '(lambda()
+			    (add-hook 'after-save-hook 'ctags-update)
+			    ))
+(add-hook 'c++-mode-hook '(lambda()
+			    (add-hook 'after-save-hook 'ctags-update)
+			    ))
+
+;;-----
 ;; irony
 ;;-----
 (use-package irony
