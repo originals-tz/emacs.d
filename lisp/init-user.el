@@ -24,4 +24,6 @@
 (color-theme-initialize)
 (color-theme-billw)
 
+(setq backup-directory-alist (quote (("." . "~/.backups"))))
+
 (provide 'init-user)
