@@ -107,6 +107,16 @@
 ;;-----
 ;;C++
 ;;-----
+
+(use-package clang-format
+  :ensure t
+  :commands (clang-format-region clang-format-buffer)
+  )
+
+(add-hook 'c++-mode-hook '(lambda()
+                            (add-hook 'before-save-hook 'clang-format-buffer)
+                            ))
+
 (defun cpp-run ()
   (interactive)
   ;; get the result of compilation
