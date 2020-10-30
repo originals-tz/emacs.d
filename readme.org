@@ -80,6 +80,8 @@ if you get a error from eamcs, you can see the message from Message buffer
  #+END_SRC
 
 ** marco and snippet
+use yas/descibe-tables to get all trigger-key
+
 *** marco
 | name               | mode | hotkey    |
 |--------------------+------+-----------|
