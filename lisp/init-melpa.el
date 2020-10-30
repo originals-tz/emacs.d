@@ -1,3 +1,4 @@
 (require 'package)
-(add-to-list 'package-archives '("melpa" . "http://elpa.emacs-china.org/melpa/") t)
+(setq package-archives '(("gnu"   . "http://elpa.emacs-china.org/gnu/")
+			 ("melpa" . "http://elpa.emacs-china.org/melpa/")))
 (provide 'init-melpa)

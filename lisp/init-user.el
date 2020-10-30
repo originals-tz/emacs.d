@@ -2,7 +2,7 @@
 ;(use-package monokai-theme
 ;  :ensure t
 ;  :config (load-theme 'monokai t))
-(load-theme 'wombat t)
+(load-theme 'manoj-dark t)
 
 (add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
 
