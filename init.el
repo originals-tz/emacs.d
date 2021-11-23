@@ -4,5 +4,6 @@
 (package-initialize)
 ;; package manager
 (require 'init-melpa)
+(require 'term-toggle)
 (put 'narrow-to-region 'disabled nil)
 (put 'dired-find-alternate-file 'disabled nil)
