@@ -22,17 +22,16 @@
 (setq scroll-step            1
       scroll-conservatively  10000)
 
+;; search command
 (use-package smex
 	:ensure t)
-;; search command
 (define-key evil-normal-state-map "n" 'smex)            ; use the easy command mode
 
+;; search file
 (use-package helm
 	:ensure t)
-
 (use-package helm-projectile
 	:ensure t)
-;; search file
 (define-key evil-normal-state-map "P" 'helm-projectile) ; shift-p
 
 
@@ -45,6 +44,7 @@
          )
   :commands lsp)
 
+;; for lsp
 (use-package company
 	:ensure t
 	:init (global-company-mode))
@@ -57,15 +57,69 @@
 ;; optionally if you want to use debugger
 ;; (use-package dap-LANGUAGE) to load the dap adapter for your language
 ;; optional if you want which-key integration
-
+(use-package lsp-ui :commands lsp-ui-mode)
+(use-package company-lsp :commands company-lsp)
 
 (use-package ccls
-  :init
   :hook ((c-mode c++-mode objc-mode cuda-mode) .
          (lambda () (require 'ccls) (lsp))))
 
 (setq ccls-executable "/usr/local/bin/ccls")
 
+;; dired tree
+(use-package dired-sidebar
+  :ensure t
+  :commands (dired-sidebar-toggle-sidebar))
 
+;; theme
+(use-package doom-themes
+  :ensure t
+  :config
+  ;; Global settings (defaults)
+  (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
+        doom-themes-enable-italic t) ; if nil, italics is universally disabled
+  (load-theme 'doom-dark+ t)
+
+  ;; Enable flashing mode-line on errors
+  (doom-themes-visual-bell-config)
+  ;; Enable custom neotree theme (all-the-icons must be installed!)
+  (doom-themes-neotree-config)
+  ;; or for treemacs users
+  (setq doom-themes-treemacs-theme "doom-atom") ; use "doom-colors" for less minimal icon theme
+  (doom-themes-treemacs-config)
+  ;; Corrects (and improves) org-mode's native fontification.
+  (doom-themes-org-config))
+
+;; clang-format
+(use-package clang-format
+  :ensure t
+  :commands (clang-format-region clang-format-buffer)
+  )
+(add-hook 'c++-mode-hook '(lambda()
+			    (add-hook 'before-save-hook 'clang-format-buffer)
+			    ))
+
+;; set the switch-case offset style
+(add-hook 'c-mode-common-hook
+          (lambda ()
+            (setq c-basic-offset 4)
+            (c-set-offset 'case-label '+)
+            (c-set-offset 'inline-open '0)))
+
+(defun cpp-run ()
+  (interactive)
+  ;; get the result of compilation
+  (setq-local result (shell-command
+		      (concat "g++ -std=c++11 -g "
+			      (file-name-nondirectory buffer-file-name))))
+  ;; if compile successfully, run the program
+  (if (eq result 0)
+      (shell-command "./a.out")
+    )
+  )
+
+(add-hook 'c++-mode-hook
+	  (lambda ()
+	    (local-set-key (kbd "C-c r") 'cpp-run)))
 
 (provide 'init-melpa)
