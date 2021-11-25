@@ -140,4 +140,31 @@
  '(shell-pop-restore-window-configuration t)
  '(shell-pop-cleanup-buffer-at-process-exit t))
 
+
+(use-package helm-ag
+  :ensure t)
+
+
+(global-set-key (kbd "C-c h") 'helm-projectile-ag)
+(electric-pair-mode 1)
+
+(use-package  protobuf-mode
+  :ensure t)
+(setq auto-mode-alist  (cons  ' (".proto$" . protobuf-mode) auto-mode-alist))
+
+(use-package  es-mode
+  :ensure t)
+(add-to-list 'auto-mode-alist '("\\.es$" . es-mode))
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((elasticsearch . t)))
+
+(defun es-format-json ()
+  (interactive)
+  (read-only-mode -1)
+  (json-pretty-print-buffer)
+  )
+(global-set-key (kbd "C-c f") 'es-format-json)
+(global-set-key (kbd "C-c o") 'shell-pop)
+
 (provide 'init-melpa)

@@ -4,6 +4,8 @@
 (package-initialize)
 ;; package manager
 (require 'init-melpa)
-(require 'term-toggle)
+(require 'init-org)
+(require 'init-modeline)
 (put 'narrow-to-region 'disabled nil)
 (put 'dired-find-alternate-file 'disabled nil)
+(put 'erase-buffer 'disabled nil)
