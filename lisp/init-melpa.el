@@ -24,14 +24,14 @@
 
 ;; search command
 (use-package smex
-	:ensure t)
+       :ensure t)
 (define-key evil-normal-state-map "n" 'smex)            ; use the easy command mode
 
 ;; search file
 (use-package helm
-	:ensure t)
+       :ensure t)
 (use-package helm-projectile
-	:ensure t)
+       :ensure t)
 (define-key evil-normal-state-map "P" 'helm-projectile) ; shift-p
 
 
@@ -70,6 +70,8 @@
 (use-package dired-sidebar
   :ensure t
   :commands (dired-sidebar-toggle-sidebar))
+
+(global-set-key (kbd "C-c m") 'dired-sidebar-show-sidebar)
 
 ;; theme
 (use-package doom-themes
@@ -140,10 +142,8 @@
  '(shell-pop-restore-window-configuration t)
  '(shell-pop-cleanup-buffer-at-process-exit t))
 
-
 (use-package helm-ag
   :ensure t)
-
 
 (global-set-key (kbd "C-c h") 'helm-projectile-ag)
 (electric-pair-mode 1)
@@ -151,8 +151,16 @@
 (use-package  protobuf-mode
   :ensure t)
 (setq auto-mode-alist  (cons  ' (".proto$" . protobuf-mode) auto-mode-alist))
+(global-set-key (kbd "C-c ,") 'uncomment-region)
+(global-set-key (kbd "C-c /") 'comment-region)
 
-(use-package  es-mode
+(global-set-key (kbd "<C-up>") 'shrink-window)
+(global-set-key (kbd "<C-down>") 'enlarge-window)
+(global-set-key (kbd "<C-left>") 'shrink-window-horizontally)
+(global-set-key (kbd "<C-right>") 'enlarge-window-horizontally)
+
+(electric-pair-mode t)
+(use-package es-mode
   :ensure t)
 (add-to-list 'auto-mode-alist '("\\.es$" . es-mode))
 (org-babel-do-load-languages
@@ -166,5 +174,11 @@
   )
 (global-set-key (kbd "C-c f") 'es-format-json)
 (global-set-key (kbd "C-c o") 'shell-pop)
+(set-frame-font "FiraCode-16" nil t)
+(set-face-font 'fixed-pitch-serif "FiraCode")
+(setq default-frame-alist nil)
 
+(use-package zen-mode
+  :ensure t)
+(global-set-key (kbd "C-c z") 'zen-mode)
 (provide 'init-melpa)

@@ -3,14 +3,8 @@
 (setq-default mode-line-format
       (list ""
             'mode-line-modified
-            "<"
-            "originals"
-            "> "
             "%10b"
             '(:eval (when nyan-mode (list (nyan-create))))
-            " "
-            'default-directory
-            " "
             "%[("
             'mode-name
             'minor-mode-list
